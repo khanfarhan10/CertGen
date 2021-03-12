@@ -61,7 +61,7 @@ def SingleSubstitution(InputDocxFilePath, OutputDocxFilePath, dic):
 
 def CertGenEngine(InputDocxFilePath, InputExcelFilePath, OutputFolder):
     document = Document(InputDocxFilePath)
-    df = pd.read_excel(InputExcelFilePath)
+    df = pd.read_excel(InputExcelFilePath, engine="openpyxl")
     Attributes = list(df.columns)
     common_utils.create_dir(OutputFolder)
     for index, row in df.iterrows():
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     # Construct Multiple Docx Examples
     ExcelFileName = os.path.join(ROOT_DIR, "CertTemplateSamples",
                                  "Data_to_Fill.xlsx")
-    df = pd.read_excel(ExcelFileName)
+    df = pd.read_excel(ExcelFileName, engine="openpyxl")
     print(df.head())
 
     print(df.columns)
