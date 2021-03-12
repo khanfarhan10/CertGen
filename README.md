@@ -12,3 +12,4 @@ Advanced Concepts to be implemented :
 - QR Code Generator
 - DateTime Now
 - Power expressions (LaTex or md) Like $12^{th}$ of March.
+- PDF generation from DOCX (pure python module) (WebAPI - https://www.convertapi.com/docx-to-pdf#snippet=python)
