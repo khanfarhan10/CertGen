@@ -4,11 +4,16 @@ import os
 import PyCertGen
 import common_utils
 
-TEMPLATES = "templates"  # "templates" this is for plain html files or "Great_Templates" this is for complex css + imgs +js +html+sass
+# "templates" this is for plain html files or "Great_Templates" this is for complex css + imgs +js +html+sass
+TEMPLATES = "Great_Templates"
 
 app = Flask(__name__, static_folder="assets", template_folder=TEMPLATES)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB Standard File Size
 ROOT_DIR = os.getcwd()
+
+# Reloading
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
 @app.route('/')
@@ -89,6 +94,12 @@ def return_files_tut(filename):
     ZipFilePath = os.path.join("TempZipSaved", filename)
     return send_file(ZipFilePath, as_attachment=True, mimetype='application/zip',
                      attachment_filename='CertGenResults.zip')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'assets', 'favicons'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == "__main__":

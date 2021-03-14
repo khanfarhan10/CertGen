@@ -1,0 +1,25 @@
+<html>
+<h3>{{ UploadFileMessage }}</h3>
+
+<h4>Parsed Results :</h4>
+<ul>
+    {% for item in data %}
+    <li>{{item}}</li>
+
+    {% endfor %}
+</ul>
+
+<p>Satisfied with the results? Go ahead and :</p>
+<a href= "/uploadexcel"><h4>Upload ExcelFile to Generate Documents</h4></a>
+
+<p>Don't see a correctly Parsed File? Don't worry, we have you covered. </p>
+
+<h4>Re-Upload Your Document</h4>
+<body>
+    <form action="/reuploadsuccess" method="POST" enctype="multipart/form-data">
+        <input type="file" name="reuploadfile" />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
