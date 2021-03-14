@@ -7,6 +7,11 @@ Certificate Generator App in Python.
   - HEADERS : TEXT_TO_REPLACE1, TEXT_TO_REPLACE2, .... 
   - CONTENT : Rows containing data to be replaced.
 
+### Web Dev Improvements
+- Credits on right or left (if in Jinja-Flask - default Left)
+- Good DOCX Example/Bad DOCX Example
+- Long DOCX Doesn't Show Well
+
 Advanced Concepts to be implemented :
 - Image Replacer
 - QR Code Generator

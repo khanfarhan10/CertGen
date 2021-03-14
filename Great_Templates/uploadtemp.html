@@ -1,10 +1,24 @@
-<html>
-<h3>Upload DOCX File :</h3>
-<body>
-    <form action="/uploadsuccess" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type="submit" />
-    </form>
-</body>
+{% extends 'base.html' %}
 
-</html>
+{% block title %}
+Upload DOCX | CertGen | MLXTREME
+{% endblock %}
+
+{% block maincontent %}
+
+
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Upload DOCX File :</h1>
+        <p>Upload the template DOCX File for Generating the Certificates.</p>
+        <h5>Or <a href="http://html5up.net" target="_blank">Download a Sample DOCX Template</a> .</h5>
+
+    </header>
+    <br />
+    <!--TODO Good Example Bad Example-->
+    <form action="/uploadsuccess" method="POST" enctype="multipart/form-data">
+        <input type="file"  name="file" />
+        <input type="submit"/>
+    </form>
+{% endblock %}

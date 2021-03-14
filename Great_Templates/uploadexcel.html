@@ -1,11 +1,21 @@
-<html>
-<h3>Upload EXCEL File :</h3>
+{% extends 'base.html' %}
 
-<body>
-    <form action="/uploadexcelsuccess" method="POST" enctype="multipart/form-data">
-        <input type="file" name="ExcelFile" />
-        <input type="submit" />
-    </form>
-</body>
+{% block title %}
+Upload EXCEL | CertGen | MLXTREME
+{% endblock %}
 
-</html>
+{% block maincontent %}
+<!-- Header -->
+<header id="header">
+    <h1>Upload EXCEL File :</h1>
+    <p>Upload the template EXCEL File for Generating the Certificates.</p>
+    <h5>Or <a href="http://html5up.net" target="_blank">Download a Sample EXCEL Template</a> .</h5>
+
+</header>
+<br />
+<!--TODO Good Example Bad Example-->
+<form action="/uploadexcelsuccess" method="POST" enctype="multipart/form-data">
+    <input type="file" name="ExcelFile" />
+    <input type="submit" />
+</form>
+{% endblock %}

@@ -1,6 +1,14 @@
-<html>
-<h3>{{ UploadFileMessage }}</h3>
+{% extends 'base.html' %}
 
+{% block title %}
+DOCX Upload Success | CertGen | MLXTREME
+{% endblock %}
+
+{% block maincontent %}
+<!-- Header -->
+
+<h3>{{ UploadFileMessage }}</h3>
+<h5>Hurray!  Your file was Uploaded Successfully.</h5>
 <h4>Parsed Results :</h4>
 <ul>
     {% for item in data %}
@@ -9,12 +17,19 @@
     {% endfor %}
 </ul>
 
-<p>Satisfied with the results? Go ahead and :</p>
-<a href= "/uploadexcel"><h4>Upload ExcelFile to Generate Documents</h4></a>
+<h5>Satisfied with the results? Go ahead and :</h5>
+<!--
+<a href="/uploadexcel">
+    <h4>Upload ExcelFile to Generate Documents</h4>
+</a>
+-->
+<a href="/uploadexcel"><button><i class="fas fa-file-excel"></i>&nbsp;Upload ExcelFile to Generate Documents</button></a>
 
-<p>Don't see a correctly Parsed File? Don't worry, we have you covered. </p>
 
-<h4>Re-Upload Your Document</h4>
+<br />
+<h5>Don't see a correctly Parsed File? Don't worry, we have you covered: </h5>
+<h5>You can Re-Upload Your Document :</h5>
+
 <body>
     <form action="/reuploadsuccess" method="POST" enctype="multipart/form-data">
         <input type="file" name="reuploadfile" />
@@ -22,4 +37,5 @@
     </form>
 </body>
 
-</html>
+
+{% endblock %}
