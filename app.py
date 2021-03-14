@@ -4,7 +4,9 @@ import os
 import PyCertGen
 import common_utils
 
-app = Flask(__name__, static_folder="assets", template_folder="templates")
+TEMPLATES = "templates"  # "templates" this is for plain html files or "Great_Templates" this is for complex css + imgs +js +html+sass
+
+app = Flask(__name__, static_folder="assets", template_folder=TEMPLATES)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB Standard File Size
 ROOT_DIR = os.getcwd()
 
