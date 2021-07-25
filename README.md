@@ -1,7 +1,7 @@
 # CertGen
-Certificate Generator App in Python.
-YouTube Tutorial : https://youtu.be/04BO_5uWH9o
-Website : https://certgenapp.herokuapp.com/
+Certificate Generator App in Python.  
+YouTube Tutorial : https://youtu.be/04BO_5uWH9o  
+Website : https://certgenapp.herokuapp.com/  
 
 ### Project Ideas
 - Static Page - Home Page
