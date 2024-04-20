@@ -1,0 +1,9 @@
+python-docx==0.8.10 # main docx templating and handling
+# docx2pdf # for docx to pdf conversions - uses MS-Word under the hood
+
+gunicorn==20.0.4 # Deployment to Heroku
+
+Flask==1.1.1
+pandas # ==1.2.3 # handling CSVs, EXCELs
+xlrd==2.0.1
+openpyxl==3.0.7
