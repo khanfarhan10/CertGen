@@ -94,7 +94,7 @@ def return_files_tut(filename):
     if filename == "CertGen.zip":
         ZipFilePath = os.path.join("TempZipSaved", filename)
         return send_file(ZipFilePath, as_attachment=True, mimetype='application/zip',
-                         attachment_filename='CertGenResults.zip')
+                         send_file='CertGenResults.zip')
     elif filename == "Sample.docx":
         SampleDOCXPath = os.path.join("CertTemplateSamples", filename)
         return send_file(SampleDOCXPath, as_attachment=True)
